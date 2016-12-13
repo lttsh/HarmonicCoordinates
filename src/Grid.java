@@ -8,7 +8,7 @@ public class Grid {
   static enum LABELS {UNDEFINED, BOUNDARY, EXTERIOR, INTERIOR};
   private Cage cage;
   private int n;
-  protected static int GRID_STEP = 5; 
+  protected static int GRID_STEP = 2; 
   protected LABELS[][] nature;
   protected double[][][] harmonicValues;
   protected int maxX, minX, maxY, minY;

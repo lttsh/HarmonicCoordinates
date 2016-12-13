@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Map;
+import java.util.HashMap;
 
 import Jcg.graph.GeometricGraph_2;
 import Jcg.graph.Node;
@@ -17,6 +19,7 @@ public class AnimatableObject extends GeometricGraph_2 {
   static final String outputFile = "../drawings/output.txt";
   private PApplet frame;
   private List<Node<Point_2>> nodes = new LinkedList<Node<Point_2>>();
+  protected Map<Node<Point_2>, Point_2> initialPoint = new HashMap<Node<Point_2>, Point_2>();
   private int selectedNode = -1;
   
   public AnimatableObject(PApplet frame) {
@@ -136,6 +139,11 @@ public class AnimatableObject extends GeometricGraph_2 {
     return this.listOfPoints().get(index);
   }
   
+  public Point_2 getInitialPoint(int index) {
+    Node<Point_2> node = this.nodes.get(index);
+    return this.initialPoint.get(node);
+  }
+  
   public void selectPoint(Point_2 p) {
     int i = findPoint(p);
     if (i >= 0) selectedNode = i;
@@ -174,5 +182,12 @@ public class AnimatableObject extends GeometricGraph_2 {
     selectedNode = -1;
     this.nodes.clear();
     this.vertices.clear();
+    this.initialPoint.clear();
+  }
+  
+  public void bindPoints() {
+    for (Node<Point_2> p : this.nodes) {
+      this.initialPoint.put(p, p.getData());
+    }
   }
 }

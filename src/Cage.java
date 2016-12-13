@@ -40,7 +40,7 @@ public class Cage {
   
   public void moveBoundObject() {
     for (int i = 0; i < this.object.vertices.size(); i++) {
-      this.object.movePoint(i, this.grid.computeNewPosition(this.object.getPoint(i)));
+      this.object.movePoint(i, this.grid.computeNewPosition(this.object.getInitialPoint(i)));
     }
   }
   

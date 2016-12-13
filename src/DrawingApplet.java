@@ -98,6 +98,9 @@ public class DrawingApplet extends PApplet implements ActionListener {
     }  else if (event.getSource() == toggleMode) {
       currentMode = (currentMode + 1) % NUMBER_MODES;
       toggleMode.setLabel(SWITCH_MODE + MODES[(currentMode + 1) % NUMBER_MODES].toString());
+      if (MODES[currentMode] == Mode.ANIMATE) {
+        this.object.bindPoints();
+      }
     } else if (event.getSource() == saveDrawing) {
       if (MODES[currentMode] == Mode.CURVE_EDIT) {
         this.object.toFile();
@@ -165,7 +168,7 @@ public class DrawingApplet extends PApplet implements ActionListener {
     if (MODES[currentMode] == Mode.ANIMATE) {
       Point_2 q = new Point_2(mouseX - xOffset, mouseY - yOffset);
       this.cage.moveBoundObject();
-      this.cage.computeHarmonicCoordinates();
+      //this.cage.computeHarmonicCoordinates();
     }
     indexOfMovingPoint = -1;
   }
@@ -179,6 +182,7 @@ public class DrawingApplet extends PApplet implements ActionListener {
         this.cage.movePoint(indexOfMovingPoint, q);
       } else if (MODES[currentMode] == Mode.ANIMATE) {
         this.cage.movePoint(indexOfMovingPoint, q);
+        this.cage.moveBoundObject();
       }
     }
   }
