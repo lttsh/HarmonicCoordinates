@@ -53,3 +53,8 @@ Dark blue indicates coordinates of higher values, white indicates coordinates is
 
 ![visualization](https://user-images.githubusercontent.com/13089230/29629475-dc24c99a-87ed-11e7-92ec-4ec33b528775.gif)
 
+
+
+### Animation ###
+
+![animation](https://user-images.githubusercontent.com/13089230/29629684-96005aa0-87ee-11e7-8b3f-8daba8e80e57.gif)
