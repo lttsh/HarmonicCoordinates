@@ -45,4 +45,11 @@ The cage is a closed polygon whose points are defined by the user.
 ### `ANIMATE` usage ###
 Left click and drag the points of the cage to see the 2D drawing be deformed.
   
+## Demos ##
+
+### Visualization of coordinates ###
+Dark blue indicates coordinates of higher values, white indicates coordinates is 0.
+
+
+![visualization](https://user-images.githubusercontent.com/13089230/29629475-dc24c99a-87ed-11e7-92ec-4ec33b528775.gif)
 
