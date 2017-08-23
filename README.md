@@ -7,6 +7,10 @@ This was a paired-project for the final project of the [Digital Representation a
 (INF555) class taught at Ecole polytechnique. 
 
 ## Description of the Applet ##
+
+![Image](https://user-images.githubusercontent.com/13089230/29629130-95a458ce-87ec-11e7-9ea0-d1f95a93c43c.png)
+
+
 The applet has 6 buttons.
 * Switch mode button that allows the user to switch between the different modes of the application.
   * `CURVE_EDIT`: The user can define a drawing that will be the 2D character to be animated. 
