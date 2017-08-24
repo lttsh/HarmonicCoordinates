@@ -16,7 +16,7 @@ import Jcg.geometry.Point_2;
 import processing.core.PApplet;
 
 public class AnimatableObject extends GeometricGraph_2 {
-  static final String outputFile = "../drawings/output.txt";
+  static final String outputFile = "drawings/output.txt";
   private PApplet frame;
   private List<Node<Point_2>> nodes = new LinkedList<Node<Point_2>>();
   protected Map<Node<Point_2>, Point_2> initialPoint = new HashMap<Node<Point_2>, Point_2>();

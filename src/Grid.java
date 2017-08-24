@@ -13,7 +13,7 @@ public class Grid {
   protected double[][][] harmonicValues;
   protected int maxX, minX, maxY, minY;
   protected int heightOfGrid, widthOfGrid;
-  static final double CHANGE_THRESHOLD = 0.000000001;
+  static final double CHANGE_THRESHOLD = 0.00000001;
   
   public Grid(Cage cage) {
     this.cage = cage;
@@ -31,7 +31,7 @@ public class Grid {
         nature[i][j] = LABELS.UNDEFINED;
       }
     }
-    
+      
     int N = this.cage.points.size();
     this.harmonicValues = new double[N][widthOfGrid][heightOfGrid];
     for(int k = 0; k < N; k++) {

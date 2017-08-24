@@ -15,7 +15,7 @@ public class DrawingApplet extends PApplet implements ActionListener {
   static String SWITCH_MODE = "Switch to Mode: ";
   private static Mode[] MODES = {Mode.CURVE_EDIT, Mode.CAGE_EDIT, Mode.COORDINATE_VISUALISATION, Mode.TEST, Mode.ANIMATE};
   final static int NUMBER_MODES = MODES.length;
-  final static String filename = "../drawings/nico2.txt";
+  private static String FILENAME = "";
   
   /* Variables for window */ 
   private Button newCage, harmonicCoord, plusButton, minusButton, toggleMode, saveDrawing;
@@ -30,11 +30,28 @@ public class DrawingApplet extends PApplet implements ActionListener {
   private int indexOfMovingPoint = -1;
   private boolean locked = false;
   
+  public DrawingApplet(String[] args) {
+    if (args != null && args.length > 0) {
+      FILENAME = args[0]; 
+    }
+  }
+  
+  public DrawingApplet() {
+    
+  }
+
+  public static void main(String[] args) {
+    if (args != null && args.length > 0) {
+      FILENAME = args[0]; 
+    }
+    PApplet.main(new String[] {"DrawingApplet"});
+  }
+  
   public void setup() {
     initButton();
     object = new AnimatableObject(this);
     cage = new Cage(this, object);
-    object.load(filename);
+    object.load(FILENAME);
   }
   
   public void initButton() {
